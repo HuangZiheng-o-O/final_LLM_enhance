@@ -4341,3 +4341,795 @@ def shape_curve(t):
 t_range = (0, 2 * np.pi)  # One full figure-eight cycle
 shape_curve_I_got: <function shape_curve at 0x124b1e200>
 t_range_I_got: (0, 6.283185307179586)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Triangle: using a trajectory that forms an equilateral triangle.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory is closed because it forms a geometric figure, specifically an equilateral triangle.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:**
+   - Start at point A (0, 0).
+   - Move to point B (1, √3/2) — this is the top of the triangle.
+   - Move to point C (2, 0) — this is the bottom right point.
+   - Move back to point A (0, 0) — closing the triangle.
+
+3. **Trajectory Analysis:**
+   - To ensure uniform speed across the entire trajectory, we can divide the total distance into equal time segments.
+   - The lengths of the triangle's sides can be calculated as the distance between the points, and each movement will smoothly transition to the next without abrupt shifts.
+
+   The coordinates of the vertices of the equilateral triangle can be stated as:
+   - A(0, 0) - Start
+   - B(1, √3/2) - Top
+   - C(2, 0) - Bottom right
+
+   We will divide the total trajectory into three segments: from A to B, from B to C, and from C to A.
+
+4. **Mathematical Functions:**
+
+```python
+import numpy as np
+
+def shape_curve(t):
+    # Each segment will take up 1/3 of the time (t = 0 to t = 1, 1 to 2, and 2 to 3)
+    if t < 1:  # Segment A to B
+        # Coordinates from A (0, 0) to B (1, sqrt(3)/2)
+        x = t
+        y = (np.sqrt(3)/2) * t
+    elif t < 2:  # Segment B to C
+        # Coordinates from B (1, sqrt(3)/2) to C (2, 0)
+        x = 1 + (t - 1)
+        y = (np.sqrt(3)/2) * (2 - t)
+    else:  # Segment C to A
+        # Coordinates from C (2, 0) back to A (0, 0)
+        x = 2 - (t - 2)
+        y = 0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 3)
+```
+
+This code will generate a smooth trajectory that forms an equilateral triangle. The movements are continuous, ensuring there are no abrupt shifts between segments, and the speed is uniform.
+extracted_code: import numpy as np
+
+def shape_curve(t):
+    # Each segment will take up 1/3 of the time (t = 0 to t = 1, 1 to 2, and 2 to 3)
+    if t < 1:  # Segment A to B
+        # Coordinates from A (0, 0) to B (1, sqrt(3)/2)
+        x = t
+        y = (np.sqrt(3)/2) * t
+    elif t < 2:  # Segment B to C
+        # Coordinates from B (1, sqrt(3)/2) to C (2, 0)
+        x = 1 + (t - 1)
+        y = (np.sqrt(3)/2) * (2 - t)
+    else:  # Segment C to A
+        # Coordinates from C (2, 0) back to A (0, 0)
+        x = 2 - (t - 2)
+        y = 0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 3)
+shape_curve_I_got: <function shape_curve at 0x1254c2200>
+t_range_I_got: (0, 3)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Spiral: using a trajectory that forms a spiral starting from the center and moving outward.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The described trajectory is open, as it is a spiral that continuously expands outward rather than returning to its starting point.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:** In this case, since the description is a simple spiral, we won't need to break it down into steps.
+
+3. **Trajectory Analysis:** The spiral will start from a central point and progressively move outward. The mathematical representation of a spiral can be defined using polar coordinates, which can then be converted to Cartesian coordinates.
+
+4. **Mathematical Functions:** 
+
+Here's the code implementing a simple spiral trajectory:
+
+```python
+import numpy as np
+
+def shape_curve(t):
+    # Define parameters for the spiral
+    a = 0.1  # Controls the distance between the coils
+    theta = t  # Angle in radians
+
+    # Convert polar to Cartesian coordinates
+    x = a * theta * np.cos(theta)  # x = r*cos(theta)
+    y = a * theta * np.sin(theta)  # y = r*sin(theta)
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10 * np.pi)  # The spiral will make several loops
+```
+
+This will create a continuous outward spiral trajectory. Adjust the parameters as needed to change the appearance of the spiral.
+extracted_code: import numpy as np
+
+def shape_curve(t):
+    # Define parameters for the spiral
+    a = 0.1  # Controls the distance between the coils
+    theta = t  # Angle in radians
+
+    # Convert polar to Cartesian coordinates
+    x = a * theta * np.cos(theta)  # x = r*cos(theta)
+    y = a * theta * np.sin(theta)  # y = r*sin(theta)
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10 * np.pi)  # The spiral will make several loops
+shape_curve_I_got: <function shape_curve at 0x1254c1f80>
+t_range_I_got: (0, 31.41592653589793)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Semicircle: using a trajectory that forms a half-circle.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory is closed because a semicircle represents a continuous curve that returns to its starting point.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:** 
+   For a semicircle, we can define the movement as follows:
+   - Start from the leftmost point of the semicircle, move rightward to the midpoint at the top of the semicircle, and then continue moving to the rightmost point. This implies a simple left to right motion forming a half-circle.
+
+2.1 Since the trajectory is straightforward (a semicircle), there's no need for a complex breakdown.
+
+3. **Trajectory Analysis:** 
+   The semicircle's trajectory can be expressed using trigonometric functions. We can use the parameter `t` to represent the angle (in radians) from 0 to π (3.14...), which will trace half the circle.
+
+   - From 0 to π, the trajectory will start at (-r, 0), go to (0, r), and finally to (r, 0), where r is the radius of the semicircle.
+
+   To ensure continuity:
+   - Start Position: (-r, 0)
+   - Mid Position: (0, r)
+   - End Position: (r, 0)
+
+4. **Mathematical Functions:** 
+   Here is how we can define the semicircle in Python:
+
+```python
+import numpy as np
+
+def shape_curve(t, r=1):  # r is the radius of the semicircle
+    # Calculate x and y coordinates for the semicircle
+    x = r * np.cos(t)         # x starts at -r, ends at r
+    y = r * np.sin(t)         # y varies from 0 to r
+    
+    return x, y
+
+# Specify the range of t (0 to π for a semicircle)
+t_range = (0, np.pi)
+```
+
+This code will accurately generate the coordinates for a semi-circular trajectory based on the parameter `t`.
+extracted_code: import numpy as np
+
+def shape_curve(t, r=1):  # r is the radius of the semicircle
+    # Calculate x and y coordinates for the semicircle
+    x = r * np.cos(t)         # x starts at -r, ends at r
+    y = r * np.sin(t)         # y varies from 0 to r
+    
+    return x, y
+
+# Specify the range of t (0 to π for a semicircle)
+t_range = (0, np.pi)
+shape_curve_I_got: <function shape_curve at 0x1254c1da0>
+t_range_I_got: (0, 3.141592653589793)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Inverse_N: using a trajectory of an inverse 'N' shape.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory described as an inverse 'N' shape is open. It is not a closed geometric figure and does not involve walking a complete loop.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:**
+   - Start at the bottom left corner. 
+   - Move diagonally up to the top right corner (to form the vertical stroke).
+   - Move horizontally to the left at the top.
+   - Move diagonally down to form the bottom right stroke (returning back down to the original starting height).
+
+2.1 Avoid overcomplicating the movement: 
+   - Move from (0, 0) to (0, 2) [upwards vertical stroke].
+   - Move from (0, 2) to (1, 2) [horizontal stroke].
+   - Move from (1, 2) to (0, 0) [downwards diagonal stroke].
+
+3. **Trajectory Analysis:** The trajectory can be visualized as moving from point to point while ensuring there are smooth transitions between segments. The movement will proceed upward, horizontally, and then downward while maintaining uniform speed of movement.
+
+- The trajectory portions are defined as follows:
+   - Segment 1: Vertical up from (0, 0) to (0, 2)
+   - Segment 2: Horizontal right from (0, 2) to (1, 2)
+   - Segment 3: Diagonal down from (1, 2) to (0, 0)
+
+### Movement coordinates:
+- For Segment 1:
+  - **Start:** (0, 0), **End:** (0, 2)
+- For Segment 2:
+  - **Start:** (0, 2), **End:** (1, 2)
+- For Segment 3:
+  - **Start:** (1, 2), **End:** (0, 0)
+
+The mathematical functions will use a parameter `t` to smoothly transition through these points.
+
+4. **Mathematical Functions:**
+```python
+def shape_curve(t):
+    # Define the segments of the inverse 'N'
+    if 0 <= t < 1:
+        # Segment 1: Vertical line (upward)
+        x = 0
+        y = 2 * t
+    elif 1 <= t < 2:
+        # Segment 2: Horizontal line (to the right)
+        x = t - 1
+        y = 2
+    elif 2 <= t < 3:
+        # Segment 3: Diagonal line (downward)
+        x = 1 - (t - 2)
+        y = 2 - (2 * (t - 2))
+    else:
+        # To stay within range, we could limit t
+        x = 0
+        y = 0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 3)
+```
+extracted_code: def shape_curve(t):
+    # Define the segments of the inverse 'N'
+    if 0 <= t < 1:
+        # Segment 1: Vertical line (upward)
+        x = 0
+        y = 2 * t
+    elif 1 <= t < 2:
+        # Segment 2: Horizontal line (to the right)
+        x = t - 1
+        y = 2
+    elif 2 <= t < 3:
+        # Segment 3: Diagonal line (downward)
+        x = 1 - (t - 2)
+        y = 2 - (2 * (t - 2))
+    else:
+        # To stay within range, we could limit t
+        x = 0
+        y = 0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 3)
+shape_curve_I_got: <function shape_curve at 0x1254c22a0>
+t_range_I_got: (0, 3)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Zigzag: using a zigzag trajectory.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory is open. A zigzag path typically does not return to the starting point.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:**
+   - Walk diagonally to the right up for a length of 1 meter (forward).
+   - Walk diagonally to the left down for a length of 1 meter (backward).
+   - Repeat the previous two steps several times.
+
+3. **Trajectory Analysis:** The zigzag trajectory consists of a series of segments that alternate between moving right-up and left-down. Each segment maintains a consistent length and direction from the previous segment while ensuring smooth transitions.
+
+4. **Mathematical Functions:** Below is the implementation that reflects the zigzag trajectory, with adjustments for smooth transitions between segments.
+
+```python
+def shape_curve(t):
+    # The trajectory consists of zigzagging segments.
+    # Each zigzag segment is 1 unit long, and there are alternating moves.
+    
+    # Find the segment number
+    segment_number = int(t // 2)  # Each segment is 2 units of 't'
+    
+    # Determine the position based on the segment number
+    if segment_number % 2 == 0:  # Even segments (0, 2, 4, ...)
+        x = (segment_number * 1)  # Moves right
+        y = (segment_number * 1)  # Moves up
+    else:  # Odd segments (1, 3, 5, ...)
+        x = (segment_number * 1)  # Moves left
+        y = (segment_number + 1) * 1  # Moves down
+
+    # Ensure smooth end of segment
+    if t % 2 != 0:  # Between segments
+        x += 0.5 if segment_number % 2 == 0 else -0.5
+        y += 0.5 if segment_number % 2 == 0 else -0.5
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10)  # 0 to 10 corresponds to a series of zigzag segments
+```
+
+This code implements a zigzag trajectory smoothly, allowing transitions between each segment to avoid abrupt shifts in position. The range of `t` is defined to allow for multiple zigzag repetitions.
+extracted_code: def shape_curve(t):
+    # The trajectory consists of zigzagging segments.
+    # Each zigzag segment is 1 unit long, and there are alternating moves.
+    
+    # Find the segment number
+    segment_number = int(t // 2)  # Each segment is 2 units of 't'
+    
+    # Determine the position based on the segment number
+    if segment_number % 2 == 0:  # Even segments (0, 2, 4, ...)
+        x = (segment_number * 1)  # Moves right
+        y = (segment_number * 1)  # Moves up
+    else:  # Odd segments (1, 3, 5, ...)
+        x = (segment_number * 1)  # Moves left
+        y = (segment_number + 1) * 1  # Moves down
+
+    # Ensure smooth end of segment
+    if t % 2 != 0:  # Between segments
+        x += 0.5 if segment_number % 2 == 0 else -0.5
+        y += 0.5 if segment_number % 2 == 0 else -0.5
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10)  # 0 to 10 corresponds to a series of zigzag segments
+shape_curve_I_got: <function shape_curve at 0x1254c2200>
+t_range_I_got: (0, 10)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'CapitalJ: using a trajectory resembling the capital letter 'J'.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory resembles the capital letter 'J', which is an open shape.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:** 
+   - Start at the top (point of 'J'), move downwards to form the straight part of the 'J'.
+   - Then curve around to form the bottom semi-circle of the 'J'.
+
+   - Breakdown:
+     1. Move straight down for a certain distance.
+     2. Curve to the left to complete the semi-circle.
+
+2.1 **Simple Trajectory Breakdown:**
+   - "Start at (0, 0), move down to (0, -2) (straight part of 'J'), then curve left from (0, -2) to (-1, -3), closing the 'J'."
+
+3. **Trajectory Analysis:** 
+   - The downward movement will go from (0, 0) to (0, -2).
+   - The curve will be represented parametrically where it starts at (0, -2) and smoothly arcs to (-1, -3).
+
+4. **Mathematical Functions:**
+```python
+import numpy as np
+
+def shape_curve(t):
+    if t < 0.5:  # First half: straight down
+        x = 0
+        y = -4 * t  # From 0 to -2
+    else:  # Second half: curve
+        t_curve = 2 * (t - 0.5)  # Normalize t for the curve part
+        x = -t_curve + 0  # Creating a leftward curve
+        y = -2 - np.sqrt(1 - (t_curve - 1)**2)  # Bottom part of the 'J'
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 1)
+``` 
+
+This code smoothly transitions between the straight and curved sections of the 'J', capturing the desired trajectory as specified.
+extracted_code: import numpy as np
+
+def shape_curve(t):
+    if t < 0.5:  # First half: straight down
+        x = 0
+        y = -4 * t  # From 0 to -2
+    else:  # Second half: curve
+        t_curve = 2 * (t - 0.5)  # Normalize t for the curve part
+        x = -t_curve + 0  # Creating a leftward curve
+        y = -2 - np.sqrt(1 - (t_curve - 1)**2)  # Bottom part of the 'J'
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 1)
+shape_curve_I_got: <function shape_curve at 0x1254c20c0>
+t_range_I_got: (0, 1)
+User: 
+**Task:** Draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+**YOUR OUTPUT SHOULD CONTAIN:**
+
+1. **Closed or Open Trajectory Decision:** Decide if the trajectory is closed or open based on the description. For example, if it's a geometric figure or involves "walking around," it's likely closed. If it's a path like the letter 'S', 'L', etc., it's open.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown: (ONLY DO WHEN Trajectoy is complex or vague. If it's simple, you can skip this step)** Break down the action description into simple, precise steps. Use a fixed format to describe the movement (e.g., "Walk forward for 5 meters, then turn 90 degrees right"). This helps in extracting the trajectory.
+
+2.1 Avoid overcomplicating the movement.Keep it accurate and straightforward.
+
+3. **Trajectory Analysis:** Analyze the described trajectory before writing the code. Consider overlapping parts where necessary (it's not normal curve, it's trajectory. A man's trajectory can overlap). The parameter `t` in `shape_curve(t)` may represent time in some cases.
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+**Note:** Clock directions are always referenced from the perspective of the person performing the trajectory.
+Ensure that both x and y coordinates change uniformly over time (`t`). This means the trajectory should reflect a consistent speed of movement.
+To ensure no "instant jumps" in the generated trajectory, specify that the trajectory function must have smooth transitions between segments. Emphasize continuity, meaning each segment's start must align with the previous segment's end, avoiding abrupt shifts. Additionally, ensure uniform speed across the entire range of `t`, with x and y coordinates changing evenly over time.
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+再次强调：为了确保平滑过渡，您需要调整每一段段的公式，使其从上一段的终点坐标开始，而不是独立地重新定义 x 和 y。如果有不同的t段落，每一段的开始坐标和结束坐标应该在注释中标注出来！start_x, start_y, end_x, end_y
+
+
+4. **Mathematical Functions:** Present the final code strictly in the form provided below, ensuring it is correct and can run without errors and READY TO USE.
+
+**Code Format:**
+```python
+def shape_curve(t):xz
+    ...
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+---
+
+Now the input is:
+
+"I want to draw a Description = 'Perform a U-turn.'. Give me `def shape_curve(t)`."
+
+
+Model: 1. **Closed or Open Trajectory Decision:** The trajectory described by "Perform a U-turn." is open because it describes a directional change rather than a complete loop or figure.
+
+2. **Extract the Trajectory Using Fixed Format Breakdown:**
+   - Start facing forward (12 o'clock).
+   - Walk forward for a certain distance (let's say 10 meters).
+   - Turn 180 degrees to face the opposite direction.
+   - Walk back the same distance (10 meters).
+
+   The breakdown can be summarized as:
+   - Walk forward for 10 meters.
+   - Turn 180 degrees.
+   - Walk backward for 10 meters.
+
+2.1 **Movement Breakdown:**
+   - **Segment 1:** 
+     - Start position: (0, 0)
+     - Move forward (0, 10)
+   - **Segment 2:** 
+     - Turn around 180 degrees ---
+     - Starting back at (0, 10)
+     - Move back to (0, 0)
+
+3. **Trajectory Analysis:**
+   - The first segment will go from (0, 0) to (0, 10) as the person walks forward 10 meters. 
+   - The second segment goes back from (0, 10) to (0, 0) as the person walks backward.
+   - The trajectory can be described using a time parameter `t` to ensure continuity and uniform motion.
+
+4. **Mathematical Functions:**
+```python
+def shape_curve(t):
+    # Segment 1: Move forward for 10 meters
+    if t < 5:  # for t in [0, 5)
+        x = 0
+        y = 2 * t  # Since t=5 corresponds to y=10
+    # Segment 2: Move backward for 10 meters
+    else:  # for t in [5, 10]
+        x = 0
+        y = 10 - 2 * (t - 5)  # Goes from y=10 down to y=0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10)
+```
+
+This implementation captures the U-turn trajectory as described, ensuring smooth transitions from one segment to another.
+extracted_code: def shape_curve(t):
+    # Segment 1: Move forward for 10 meters
+    if t < 5:  # for t in [0, 5)
+        x = 0
+        y = 2 * t  # Since t=5 corresponds to y=10
+    # Segment 2: Move backward for 10 meters
+    else:  # for t in [5, 10]
+        x = 0
+        y = 10 - 2 * (t - 5)  # Goes from y=10 down to y=0
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 10)
+shape_curve_I_got: <function shape_curve at 0x1254c20c0>
+t_range_I_got: (0, 10)
+Error interpolating velocity: Cannot cast ufunc 'add' output from dtype('float64') to dtype('int64') with casting rule 'same_kind'
+Error interpolating velocity: u_turn
