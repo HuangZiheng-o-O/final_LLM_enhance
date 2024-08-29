@@ -1,0 +1,2 @@
+Number9: using a trajectory resembling the number '9'.
+CapitalPi: using a trajectory resembling the capital Greek letter 'Π' (Pi).

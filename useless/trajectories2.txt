@@ -1,0 +1,31 @@
+Triangle: using a trajectory that forms an equilateral triangle.
+Crescent: using a trajectory that forms the shape of a crescent moon.
+Spiral: using a trajectory that forms a spiral starting from the center and moving outward.
+Semicircle: using a trajectory that forms a half-circle.
+Inverse_N: using a trajectory of an inverse 'N' shape.
+Zigzag: using a zigzag trajectory.
+135angleLeft: moving forward and then making a 135-degree turn to the left.
+CapitalJ: using a trajectory resembling the capital letter 'J'.
+CapitalW: using a trajectory resembling the capital letter 'W'.
+Number9: using a trajectory resembling the number '9'.
+CapitalPi: using a trajectory resembling the capital Greek letter 'Π' (Pi).
+ForwardAndBackward: using a forward and backward trajectory.
+ForwardAndBackAndBack: using a forward, backward, and backward to the original point trajectory.
+Walk forward, then turn around and walk forward again, then turn (towards 10 o'clock) and continue walking .
+Walk forward, and turn (towards 10 o'clock) and continue walking , then turn (towards 10 o'clock) and continue walking .
+
+
+Walk in a figure-eight pattern.
+Climb a spiral staircase.
+Perform a U-turn.
+Move in a zigzag pattern across the field.
+Run around the perimeter of a square.
+Follow the path of a winding river.
+Walk in a straight line, then make a right-angle turn.
+Circle around an object and return to your starting point.
+
+
+A man mimics James Bond's classic action "Opening Gun Barrel Sequence"
+A man mimics Michael Jackson's "Moonwalk"
+A man mimics Indiana Jones' "Temple Run"
+A man mimics Charlie Chaplin’s "The Tramp’s Walk"

@@ -1,0 +1,15 @@
+Great Job. Now I get the keyframes of 30 points.
+THE KEYFRAMES I GET ARE:
+"PALCEHOLDER1"
+pattern_name is "PALCEHOLDER2"(now I think pattern_name is a little bit long, summarize pattern_name using keywords connected with "_" and replace the pattern_name.)
+present it again IN THE FOLLOWING FORMAT (DO NOT ADD ANYTHING ELSE):
+
+elif pattern == "{pattern_name_simple}":
+    kframes = [
+        (0, (x_coordinate0, y_coordinate0)),
+        (frame_number1, (x_coordinate1, y_coordinate1)),
+        (frame_number2, (x_coordinate2, y_coordinate2)),
+        ...
+        (115, (x_coordinate_i, y_coordinate_i)),
+    ]
+

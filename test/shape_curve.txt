@@ -1,0 +1,18 @@
+def shape_curve(t):
+    # Define the loop's radius
+    radius = 1
+
+    # Time normalization for the loops
+    # Each loop runs over an interval of t/2
+    if t < np.pi:  # Upper loop
+        x = radius * np.sin(t)   # Start from (0,0) to (1, 1) and back to (0,0)
+        y = radius * np.cos(t)   # Upper loop
+    else:  # Lower loop
+        t -= np.pi  # Start second loop
+        x = radius * np.sin(t)   # Continuing from (0,0) to (-1, -1) back to (0,0)
+        y = -radius * np.cos(t)  # Lower loop is inverted
+
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (0, 2 * np.pi)  # Full figure-eight path

@@ -1,0 +1,66 @@
+Rhombus: using a trajectory that forms a rhombus with equal sides and opposite equal angles.
+Trapezoid: using a trajectory that forms a trapezoid with one pair of parallel sides.
+Star: using a trajectory that forms a five-pointed star.
+Spiral: using a trajectory that starts at the center and spirals outward.
+Heart: using a trajectory that forms the shape of a heart.
+Wave: using a trajectory that follows a wavy pattern.
+Circle: using a trajectory that forms a complete circle.
+Triangle: using a trajectory that forms an equilateral triangle.
+Pentagon: using a trajectory that forms a regular pentagon.
+Hexagon: using a trajectory that forms a regular hexagon.
+Diamond: using a trajectory that forms the shape of a diamond.
+Parallelogram: using a trajectory that forms a parallelogram.
+Infinity: using a trajectory that forms the shape of an infinity symbol.
+Crescent: using a trajectory that forms the shape of a crescent moon.
+Lightning: using a trajectory that forms the shape of a lightning bolt.
+WavyTrajectory: using a continuous wavy trajectory pattern.
+WaveCircle: using a wavy trajectory that forms a circle.
+SnakeTrajectory: using a continuous trajectory that resembles a snake.
+Spiral: using a trajectory that forms a spiral starting from the center and moving outward.
+Semicircle: using a trajectory that forms a half-circle.
+Arrow: using a trajectory that forms an arrow shape with a straight line and a triangular head.
+Ellipse: using a trajectory that forms an elongated circle, or oval shape.
+Square: using a square trajectory with a return to the origin.
+Inverse_N: using a trajectory of an inverse 'N' shape.
+3dots: using a trajectory that passes through three specific points not in a straight trajectory.
+SDF: using a straight trajectory.
+Zigzag: using a zigzag trajectory.
+DenseS: using a densely curved 'S' shaped trajectory.
+SparseS: using a sparsely curved 'S' shaped trajectory.
+ZS: using a 'Z' shaped trajectory with some curves.
+135angleLeft: moving forward and then making a 135-degree turn to the left.
+135angleRight: moving forward and then making a 135-degree turn to the right.
+120angleLeft: moving forward and then making a 120-degree turn to the left.
+120angleRight: moving forward and then making a 120-degree turn to the right.
+110angleLeft: moving forward and then making a 110-degree turn to the left.
+110angleRight: moving forward and then making a 110-degree turn to the right.
+90angleLeft: moving forward and then making a 90-degree turn to the left.
+90angleRight: moving forward and then making a 90-degree turn to the right.
+60angleLeft: moving forward and then making a 60-degree turn to the left.
+60angleRight: moving forward and then making a 60-degree turn to the right.
+30angleLeft: moving forward and then making a 30-degree turn to the left.
+30angleRight: moving forward and then making a 30-degree turn to the right.
+CapitalI: using a trajectory resembling the capital letter 'I'.
+CapitalJ: using a trajectory resembling the capital letter 'J'.
+CapitalL: using a trajectory resembling the capital letter 'L'.
+CapitalO: using a trajectory resembling the capital letter 'O'.
+CapitalS: using a trajectory resembling the capital letter 'S'.
+CapitalU: using a trajectory resembling the capital letter 'U'.
+CapitalV: using a trajectory resembling the capital letter 'V'.
+CapitalZ: using a trajectory resembling the capital letter 'Z'.
+Number0: using a trajectory resembling the number '0'.
+Number1: using a trajectory resembling the number '1'.
+Number7: using a trajectory resembling the number '7'.
+Number8: using a trajectory resembling the number '8'.
+Number6: using a trajectory resembling the number '6'.
+Number9: using a trajectory resembling the number '9'.
+CapitalGamma: using a trajectory resembling the capital Greek letter 'Γ' (Gamma).
+CapitalLambda: using a trajectory resembling the capital Greek letter 'Λ' (Lambda).
+CapitalPi: using a trajectory resembling the capital Greek letter 'Π' (Pi).
+CapitalSigma: using a trajectory resembling the capital Greek letter 'Σ' (Sigma).
+CapitalUpsilon: using a trajectory resembling the capital Greek letter 'Υ' (Upsilon).
+LowercaseSigma: using a trajectory resembling the lowercase Greek letter 'σ' (sigma).
+LowercaseUpsilon: using a trajectory resembling the lowercase Greek letter 'υ' (upsilon).
+Guide30Angle: using a guided 30-degree angle trajectory.
+ForwardAndBackward: using a forward and backward trajectory.
+ForwardAndBackAndBack: using a forward, backward, and backward to the original point trajectory.

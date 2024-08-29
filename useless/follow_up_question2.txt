@@ -1,0 +1,19 @@
+Great Job. Now I get the keyframes of 30 points, but I only want to choose 6~14 points from them.
+THE KEYFRAMES I GET ARE:
+"PALCEHOLDER1"
+PAY ATTENTION: The points must be numbered and chosen in sequential order, not randomly.
+Ensuring the points follow the curve's natural path.
+IN ORDER & along the curve is important
+Increase point density at critical or sharp turns to smooth the trajectory. For you only need to choose 6~14 points out of 30, you should pay more attention to the critical or sharp turns.
+pattern_name is "PALCEHOLDER2"
+YOUR ONLY OUTPUT IS IN THE FOLLOWING FORMAT (DO NOT ADD ANYTHING ELSE):
+
+elif pattern == "{pattern_name}":
+    kframes = [
+        (0, (x_coordinate0, y_coordinate0)),
+        (frame_number1, (x_coordinate1, y_coordinate1)),
+        (frame_number2, (x_coordinate2, y_coordinate2)),
+        ...
+        (115, (x_coordinate_i, y_coordinate_i)),
+    ]
+

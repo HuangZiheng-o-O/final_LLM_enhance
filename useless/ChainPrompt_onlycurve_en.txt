@@ -1,0 +1,38 @@
+**Task:** draw a continuous trajectory to represent a specified curve/line/shape(trajectory) of a person, according to the given [Description].
+
+YOUR OUTPUT SHOULD CONTAIN:
+1. You need to decide if it's a closed trajectory, and if it's not a closed curve (for example, the capital letter 'S', 'L', 'N', 'M', ...), then don't design the function as a closed curve. Otherwise, it needs to be designed as a closed trajectory, for example, a closed geometric figure, "walk around,"... In conclusion, you should decide by yourself.
+2. Extract the curve/line/shape(trajectory) from the action description. The input is an action description, and you need to extract the human movement trajectory from it. If there are phrases like "turn around," indicating that the curve has overlapping parts, you need to consider this as well (this is not a normal two-dimensional curve but a three-dimensional curve related to time). In some cases, the parameter `t` in the `shape_curve(t)` function represents time.
+3. Analysis of the curve/line/shape(trajectory). You need to analyze the trajectory first, instead of directly designing the code. (Thinking is important)
+4. Mathematical functions: ONLY BE PRESENTED IN THE FORM BELOW IN THE CODE BLOCK (`python`).
+
+Note: Your understanding of clock directions might be different from mine, so here's a quick reference:
+12 o'clock: Straight ahead
+3 o'clock: Directly to your right
+6 o'clock: Directly behind you
+9 o'clock: Directly to your left
+1-2 o'clock: Slightly to the right front
+10-11 o'clock: Slightly to the left front
+4-5 o'clock: Slightly to the right back
+7-8 o'clock: Slightly to the left back
+
+Note: Whether it's to the right, left, or any clock direction, it's always referenced from the perspective of the person walking this trajectory, not from the image's perspective.
+
+YOU NEED TO MAKE SURE THAT THE CODE IS CORRECT AND CAN RUN WITHOUT ERROR AND IS READY TO USE.
+YOUR CODE SHOULD BE PRESENTED EXACTLY IN THE FORM BELOW:
+
+```python
+def shape_curve(t): # The curve starts at (0,0)
+    ...
+    return x, y
+
+# Specify the range of t (it is important)
+t_range = (start_value, end_value)
+```
+
+################################
+
+Now the input is:
+
+I want to draw a Description = "placeholder1"
+give me def shape_curve(t)

@@ -1,0 +1,7 @@
+/Users/huangziheng/opt/anaconda3/envs/deep_learning_env/lib/python3.11/site-packages/scipy/interpolate/_fitpack_impl.py:300: RuntimeWarning: The maximal number of iterations (20) allowed for finding smoothing
+spline with fp=s has been reached. Probable cause: s too small.
+(abs(fp-s)/s>0.001)
+  warnings.warn(RuntimeWarning(_iermess[ier][0]))
+/Users/huangziheng/opt/anaconda3/envs/deep_learning_env/lib/python3.11/site-packages/scipy/optimize/_minpack_py.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last ten iterations.
+  warnings.warn(msg, RuntimeWarning)
