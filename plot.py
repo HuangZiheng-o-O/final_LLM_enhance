@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the tangent vectors from the provided 'capital_W.npy' file
-file_path = 'number9.npy'
+file_path = 'U_turn.npy'
 tangent_vectors = np.load(file_path, allow_pickle=True)
 # get name from file
 type_name = file_path.split('.')[0]

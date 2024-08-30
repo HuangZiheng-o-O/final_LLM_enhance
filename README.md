@@ -10,6 +10,48 @@ See README.pdf
 
 
 
+Update friday 9/30:
+
+There are 2 functions in the main py: `several_prompts_good.py`
+
+```
+interpolate_and_resample_velocity
+```
+
+uses
+
+```
+dx, dy = splev(ui, tck, der=1)  # First derivative gives the tangent vector
+root_linear_velocity.append((dx, dy))
+```
+
+
+
+
+
+```
+interpolate_and_resample_velocity2
+```
+
+uses
+
+```
+velocity_vectors = [(uniform_points[i][0] - uniform_points[i - 1][0],
+                     uniform_points[i][1] - uniform_points[i - 1][1]) for i in range(1, len(uniform_points))]
+```
+
+
+
+So I recommend `interpolate_and_resample_velocity2`function 
+
+this time you should still  run `/Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scale_tool_group.py` to get scaled data
+
+this time you should use plot_unscaled_velocityrecover_v2.py to plot `interpolate_and_resample_velocity2` result and use `plot_scaled.py` to plot scaled result ( in `/Users/huangziheng/PycharmProjects/final_LLM_enhance/npysave/scaled`)
+
+generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scale_tool_group.py 
+
+
+
 ```
 (base) ➜  final_LLM_enhance git:(main) tree /Users/huangziheng/PycharmProjects/final_LLM_enhance
 /Users/huangziheng/PycharmProjects/final_LLM_enhance

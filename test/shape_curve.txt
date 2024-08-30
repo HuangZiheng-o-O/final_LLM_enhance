@@ -1,18 +1,34 @@
 def shape_curve(t):
-    # Define the loop's radius
-    radius = 1
+    # Define the parameters for the curve sections
+    # Segment 1: From (0, 0) to (5, 0)
+    if t < 0.33:
+        start_x, start_y = 0, 0
+        end_x, end_y = 5, 0
 
-    # Time normalization for the loops
-    # Each loop runs over an interval of t/2
-    if t < np.pi:  # Upper loop
-        x = radius * np.sin(t)   # Start from (0,0) to (1, 1) and back to (0,0)
-        y = radius * np.cos(t)   # Upper loop
-    else:  # Lower loop
-        t -= np.pi  # Start second loop
-        x = radius * np.sin(t)   # Continuing from (0,0) to (-1, -1) back to (0,0)
-        y = -radius * np.cos(t)  # Lower loop is inverted
+        # Linear movement from 0 to 5 for x while y remains 0
+        x = start_x + (end_x - start_x) * (t / 0.33)
+        y = start_y + (end_y - start_y) * (t / 0.33)
+
+    # Segment 2: From (5, 0) to (5, 5) (U shape upward)
+    elif t < 0.66:
+        start_x, start_y = 5, 0
+        end_x, end_y = 5, 5
+
+        # Vertical movement from 0 to 5 for y while x remains 5
+        x = start_x  # remains constant at 5
+        y = start_y + (end_y - start_y) * ((t - 0.33) / 0.33)
+
+    # Segment 3: From (5, 5) to (0, 0) (downward U shape back to start)
+    else:
+        start_x, start_y = 5, 5
+        end_x, end_y = 0, 0
+
+        # Curved movement using a parabolic equation to smoothly return to (0, 0)
+        t_new = (t - 0.66) / 0.34  # Normalize to range [0, 1]
+        x = start_x - (start_x - end_x) * (t_new * t_new)  # Use a quadratic to create a curve
+        y = start_y - (start_y - end_y) * (t_new * t_new)  # Similar curve for y
 
     return x, y
 
 # Specify the range of t (it is important)
-t_range = (0, 2 * np.pi)  # Full figure-eight path
+t_range = (0, 1)

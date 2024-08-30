@@ -1,7 +1,1 @@
-Triangle: using a trajectory that forms an equilateral triangle.
-Spiral: using a trajectory that forms a spiral starting from the center and moving outward.
-Semicircle: using a trajectory that forms a half-circle.
-Inverse_N: using a trajectory of an inverse 'N' shape.
-Zigzag: using a zigzag trajectory.
-CapitalJ: using a trajectory resembling the capital letter 'J'.
-Perform a U-turn.
+U-shaped:a man walk in the trjectory of a U-turn
