@@ -3,7 +3,7 @@ See README.pdf
 ## Steps
 
 1. modify config.yaml to write down your openai apikey sk-...
-2. define the trajectory description in :/Users/huangziheng/PycharmProjects/final_LLM_enhance/prompt/trajectories.txt
+2. define the trajectory description in : `/Users/huangziheng/PycharmProjects/final_LLM_enhance/prompt/trajectories.txt`
 3. run `/Users/huangziheng/PycharmProjects/final_LLM_enhance/several_prompts_good.py` npy will be saved to`/Users/huangziheng/PycharmProjects/final_LLM_enhance/npysave`
 4. run `/Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scale_tool_group.py` to get scaled data (align with humanml dataset) after this step you can get final data in `/Users/huangziheng/PycharmProjects/final_LLM_enhance/npysave/scaled`
 5. recomend to run `/Users/huangziheng/PycharmProjects/final_LLM_enhance/plot_ingroup.py` to plot everything.
