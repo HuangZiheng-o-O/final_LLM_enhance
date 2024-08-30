@@ -53,7 +53,10 @@ generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scal
 
 
 ```
-(base) ➜  final_LLM_enhance git:(main) tree /Users/huangziheng/PycharmProjects/final_LLM_enhance
+Last login: Fri Aug 30 10:26:03 on console
+You have new mail.
+(base) ➜  ~ /Users/huangziheng/PycharmProjects/final_LLM_enhance 
+(base) ➜  final_LLM_enhance git:(main) ✗ tree /Users/huangziheng/PycharmProjects/final_LLM_enhance
 /Users/huangziheng/PycharmProjects/final_LLM_enhance
 ├── 1.py
 ├── Humanml
@@ -72,6 +75,8 @@ generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scal
 ├── config.yaml
 ├── image
 │   ├── Screenshot 2024-08-29 at 00.35.08.png
+│   ├── U_shape.png
+│   ├── U_turn.png
 │   ├── capital_W.png
 │   ├── capital_j.png
 │   ├── capital_pi.png
@@ -87,32 +92,42 @@ generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scal
 ├── log
 │   └── model_interaction_log.txt
 ├── npysave
+│   ├── U_shape.npy
+│   ├── U_turn.npy
 │   ├── already
-│   ├── capital_W.npy
-│   ├── capital_j.npy
-│   ├── capital_j_scaled.npy
-│   ├── capital_pi.npy
-│   ├── figure_eight.npy
-│   ├── inverse_N.npy
-│   ├── number9.npy
-│   ├── scaled
+│   │   ├── capital_W.npy
+│   │   ├── capital_j.npy
 │   │   ├── capital_j_scaled.npy
-│   │   ├── capital_pi_scaled.npy
-│   │   ├── figure_eight_scaled.npy
-│   │   ├── inverse_N_scaled.npy
-│   │   ├── number9_scaled.npy
-│   │   ├── semicircle_scaled.npy
-│   │   ├── spiral_scaled.npy
-│   │   ├── spiral_staircase_scaled.npy
-│   │   └── zigzag_scaled.npy
-│   ├── semicircle.npy
-│   ├── spiral.npy
-│   ├── spiral_staircase.npy
-│   ├── triangle.npy
-│   ├── walk_turn_continue.npy
-│   └── zigzag.npy
+│   │   ├── capital_pi.npy
+│   │   ├── figure_eight.npy
+│   │   ├── inverse_N.npy
+│   │   ├── number9.npy
+│   │   ├── semicircle.npy
+│   │   ├── spiral.npy
+│   │   ├── spiral_staircase.npy
+│   │   ├── triangle.npy
+│   │   ├── walk_turn_continue.npy
+│   │   └── zigzag.npy
+│   └── scaled
+│       ├── U_shape_scaled.npy
+│       ├── U_turn_scaled.npy
+│       ├── capital_W_scaled.npy
+│       ├── capital_j_scaled.npy
+│       ├── capital_j_scaled_scaled.npy
+│       ├── capital_pi_scaled.npy
+│       ├── figure_eight_scaled.npy
+│       ├── inverse_N_scaled.npy
+│       ├── number9_scaled.npy
+│       ├── semicircle_scaled.npy
+│       ├── spiral_scaled.npy
+│       ├── spiral_staircase_scaled.npy
+│       ├── triangle_scaled.npy
+│       ├── walk_turn_continue_scaled.npy
+│       └── zigzag_scaled.npy
 ├── plot.py
-├── plot_ingroup.py
+├── plot_ingroup_velocityrecover_v1.py
+├── plot_scaled.py
+├── plot_unscaled_velocityrecover_v2.py
 ├── prompt
 │   ├── ChainPrompt.txt
 │   ├── follow_up_question.txt
@@ -128,9 +143,12 @@ generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scal
 │   ├── 111.py
 │   ├── draw_patterns.py
 │   ├── execute_code_and_compute_keyframes.py
+│   ├── great_recover_speed_test.py
+│   ├── great_recover_speed_test2.py
 │   ├── imagesGPT
 │   │   ├── 20240828231607_keyframes.png
-│   │   └── 20240829003813_keyframes.png
+│   │   ├── 20240829003813_keyframes.png
+│   │   └── 20240830143413_keyframes.png
 │   ├── interpolate_and_resample_velocity_test.py
 │   ├── keyframes.txt
 │   ├── keyframes8.txt
@@ -149,7 +167,8 @@ generated from /Users/huangziheng/PycharmProjects/final_LLM_enhance/Humanml/scal
     ├── trajectories.txt
     └── trajectories2.txt
 
-14 directories, 80 files
+14 directories, 95 files
+(base) ➜  final_LLM_enhance git:(main) ✗ 
 
 ```
 
