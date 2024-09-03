@@ -4,7 +4,7 @@ import yaml
 import re
 import numpy as np
 import matplotlib.pyplot as plt
-from openai import OpenAI
+
 from typing import List, Tuple
 from scipy.integrate import simps, quad
 from scipy.interpolate import splprep, splev
@@ -13,7 +13,7 @@ import numpy as np
 from scipy.interpolate import splprep, splev
 from scipy.integrate import simps
 from scipy.optimize import fsolve
-
+from openai import OpenAI
 # Load API key from a YAML configuration file
 with open("config.yaml") as f:
     config_yaml = yaml.load(f, Loader=yaml.FullLoader)
