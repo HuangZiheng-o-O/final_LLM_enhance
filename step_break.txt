@@ -1,0 +1,167 @@
+actions_to_test
+Perform a signature James Bond pose with a dramatic turn and gunpoint.
+{
+    "step1": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm is extended across his torso, elbow bent, and hand positioned to stabilize the imaginary weapon."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm is extended outward at shoulder height as if aiming with a firearm."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg is positioned slightly forward, planted firmly on the ground."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg is pivoted to allow the body to turn, supporting the stance."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine is straight but rotates to the right as he pivots."
+        }
+    ],
+    "step2": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm remains steady across his torso."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm holds its position outward at shoulder height."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg maintains its forward position, providing balance."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg supports the pivot with a firm stance."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine maintains alignment while completing the turn."
+        }
+    ]
+}
+=========================actions_to_test
+Fight with the fluid precision and power of Bruce Lee.
+{
+    "step1": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm is held close to his body in a guard position."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm is also positioned in a guard stance, ready for defense."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg is anchored to the ground, providing stability."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg is slightly bent, coiling to generate power for the upcoming kick."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine is straight, supporting the alignment during the weight shift."
+        }
+    ],
+    "step2": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm remains in guard position, poised for a counter."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm extends forward, preparing to execute a punch."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg is lifted and extended, initiating the powerful front kick."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg provides balance as the left leg executes the kick."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine maintains an upright posture, aligning with hip rotation."
+        }
+    ],
+    "step3": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm quickly retracts to prepare for defense."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm thrusts forward to deliver a rapid jab."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg lands safely, establishing a new stable position."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg steps laterally to reposition for balance."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine remains engaged, maintaining core stability while executing the side-step."
+        }
+    ]
+}
+=========================actions_to_test
+Perform a graceful spinning kick in the style of Jet Li.
+{
+    "step1": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm extends outward to maintain balance."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm is also extended outward for balance."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg is planted firmly on the ground as the supporting leg."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg prepares to sweep upward and outward."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine twists slightly to initiate the spin."
+        }
+    ],
+    "step2": [
+        {
+            "body part": "left arm",
+            "description": "The man's left arm remains extended outward to help with balance."
+        },
+        {
+            "body part": "right arm",
+            "description": "The man's right arm is bent at the elbow and raised slightly above shoulder level."
+        },
+        {
+            "body part": "left leg",
+            "description": "The man's left leg maintains its position as a supporting base."
+        },
+        {
+            "body part": "right leg",
+            "description": "The man's right leg sweeps upward and outward, accelerating through the kick."
+        },
+        {
+            "body part": "spine",
+            "description": "The man's spine rotates fluidly with the motion of the kick."
+        }
+    ]
+}
+=========================
